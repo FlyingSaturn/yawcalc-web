@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head><title>Yaw Calculator</title>
+  
+</head>
+<body>
+<div class="current"> 
+<div> Where are you standing at? </div>
+<form id="current-form">
+    <label for="locX">Location X:</label>
+    <input type="number" id="locX" required><br>
+    <label for="locZ">Location Z:</label>
+    <input type="number" id="locZ" required><br>
+<div> Where do you want to go? </div>
+    <label for="destX">Location X:</label>
+    <input type="number" id="destX" required><br>
+    <label for="destZ">Location Z:</label>
+    <input type="number" id="destZ" required><br>
+<button type="button" onclick="calculateYaw()">Submit</button>
+</form>
+<p id="result"></p>
+<div>Made with ♥</div>
+<script>
+  function calculateYaw() {
+
+
+      // Get the values from the form inputs
+      const locX = document.getElementById("locX").value;
+      const locZ = document.getElementById("locZ").value;
+      const destX = document.getElementById("destX").value;
+      const destZ = document.getElementById("destZ").value;
+
+
+      // Construct the URL with the correct variable names
+      const url = `http://localhost:8080/calculate?xcurrent=${locX}&zcurrent=${locZ}&xdest=${destX}&zdest=${destZ}`;
+      // Fetch the response from the server
+      fetch(url)
+        .then(response => response.text()) // Get the yaw as plain text
+        .then(data => {
+              // Display the result in the 'result' div
+              document.getElementById("result").innerHTML = `Calculated Yaw: ${data} :)`;
+          })
+          .catch(error => {
+              console.error('Error:', error);
+          });
+          
+  }
+  </script>
+  </body>
+</html>
