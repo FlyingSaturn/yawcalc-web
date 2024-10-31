@@ -1,14 +1,8 @@
-# Importing JDK and copying required files
-FROM openjdk:19-jdk AS build
+# Use a Maven image to build the app
+FROM maven:3.8.4-openjdk-17 AS build
 WORKDIR /app
-COPY pom.xml .
-COPY src src
-
-RUN mvn -N wrapper:wrapper
-
-# Copy Maven wrapper
-COPY mvnw .
-COPY .mvn .mvn
+COPY . .
+RUN ./mvnw clean package
 
 # Set execution permission for the Maven wrapper
 RUN chmod +x ./mvnw
