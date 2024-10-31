@@ -19,7 +19,7 @@
     const destZ = data.get("destZ");
 
     // Build the url
-    const url = new URL("http://localhost:8080/calculate");
+   const url = new URL(`${window.location.href}` + "calculate");
     url.searchParams.append("xcurrent", locX);
     url.searchParams.append("zcurrent", locZ);
     url.searchParams.append("xdest", destX);
