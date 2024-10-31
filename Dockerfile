@@ -1,11 +1,15 @@
-# Use an official Java runtime as the base image
-FROM openjdk:17-jdk-alpine
+#
+# Build stage
+#
+FROM maven:3.8.2-jdk-11 AS build
+COPY . .
+RUN mvn clean package -Pprod -DskipTests
 
-# Set the working directory in the container
-WORKDIR /app
-
-# Copy the jar file into the container
-COPY src/target/demo-0.0.1-SNAPSHOT.jar app.jar
-
-# Run the jar file
-ENTRYPOINT ["java", "-jar", "app.jar"]
+#
+# Package stage
+#
+FROM openjdk:11-jdk-slim
+COPY --from=build /target/demo-0.0.1-SNAPSHOT.jar demo.jar
+# ENV PORT=8080
+EXPOSE 8080
+ENTRYPOINT ["java","-jar","demo.jar"]
