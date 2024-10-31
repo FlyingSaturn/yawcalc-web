@@ -1,4 +1,11 @@
-FROM eclipse-temurin:17-jdk-alpine
-VOLUME /tmp
-COPY target/ascii-art-generator-0.0.1-SNAPSHOT.jar ascii-art-generator.jar
-ENTRYPOINT ["java","-jar","/ascii-art-generator.jar"]
+# Use an official Java runtime as the base image
+FROM openjdk:17-jdk-alpine
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the jar file into the container
+COPY target/your-app-name.jar app.jar
+
+# Run the jar file
+ENTRYPOINT ["java", "-jar", "app.jar"]
