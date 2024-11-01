@@ -11,10 +11,9 @@ body {
 
 h2 {
     font-weight: 400;
-
 }
 
-  input {
+  input[type='text']{
     font-family: monospace;
     font-weight: 400;
     background-color: black;
@@ -68,3 +67,14 @@ button {
     display: inline-block;
     font-size: 16px;
   }
+.nether {
+  margin:.5em;
+  margin-left: 0em;
+  margin-right: 0em;
+}
+
+input[type="checkbox"] {
+  width: 1.45em; /*Desired width*/
+  height: 1.45em; /*Desired height*/
+  cursor: pointer;
+}
