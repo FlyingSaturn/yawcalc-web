@@ -13,10 +13,10 @@
     const data = new FormData(form);
 
     // Get the values from the form inputs
-    const locX = data.get("locX");
-    const locZ = data.get("locZ");
-    const destX = data.get("destX");
-    const destZ = data.get("destZ");
+    let locX = data.get("locX");
+    let locZ = data.get("locZ");
+    let destX = data.get("destX");
+    let destZ = data.get("destZ");
     const netherEquivCurrent=document.querySelector('#netherEquivCurrent').checked;
     const netherEquivDest = document.querySelector('#netherEquivDest').checked;
     if(netherEquivCurrent)
