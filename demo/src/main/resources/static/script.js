@@ -22,7 +22,7 @@
     if(netherEquivCurrent)
     {
       locX /= 8;
-      locX = (Math.round (locX * 1000.0)) / 1000.0;
+      locX = (Math.round (locX * 1000.0)) / 1000.0; //Rounding off to 3 digits again
       locZ /= 8;
       locZ = (Math.round (locZ * 1000.0)) / 1000.0;
     }
