@@ -8,4 +8,4 @@ and spring-boot should run from port 8080
 
 Use `mvn spring-boot:run` to run the app.
 
-I really should thank the coding folks on the Bentovid Discord server for making my static code better. Tbh, it would've been a nightmare without them.
+I really should thank the coding folks on the Bentovid Discord server for making my static code better. Tbh, it would've been a nightmare without their contributions.
