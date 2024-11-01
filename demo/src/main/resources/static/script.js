@@ -11,7 +11,11 @@
     e.preventDefault();
     const form = e.target;
     const data = new FormData(form);
-
+    
+    document.getElementById("result").innerHTML = "";
+    document.getElementById("netherstart").innerHTML = "";
+    document.getElementById("netherend").innerHTML = "";
+    
     // Get the values from the form inputs
     let locX = data.get("locX");
     let locZ = data.get("locZ");
