@@ -46,6 +46,10 @@
         document.getElementById(
           "result"
         ).innerHTML = `Calculated Yaw: ${data} :)`;
+        if(netherEquivCurrent)
+          document.getElementById("netherstart").innerHTML = "Start from here in the Nether Biome: " + `${locX}` + ", "  + `${locZ}`;
+        if(netherEquivDest)
+          document.getElementById("netherend").innerHTML = "Go here in the Nether Biome: " + `${locX}` + ", "  + `${locZ}`; 
       })
       .catch((error) => console.error("Error:", error));
   }

@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
-@import url('https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-rounded/css/uicons-solid-rounded.css');
 
 body {
     font-family: Lexend, sans-serif !important;
@@ -44,7 +43,7 @@ h2 {
     gap: 0.25rem;
   }
 
-#result{
+  #result, #netherstart, #netherend, footer{
     gap: 0.75rem;
     margin: .5em;
 }
