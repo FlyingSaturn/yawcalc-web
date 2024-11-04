@@ -6,16 +6,14 @@
     // Listen for the submit event
     form.addEventListener("submit", calculateYaw);
   });
-
   function calculateYaw(e) {
     e.preventDefault();
     const form = e.target;
     const data = new FormData(form);
-    
+
     document.getElementById("result").innerHTML = "";
     document.getElementById("netherstart").innerHTML = "";
     document.getElementById("netherend").innerHTML = "";
-    
     // Get the values from the form inputs
     let locX = data.get("locX");
     let locZ = data.get("locZ");
