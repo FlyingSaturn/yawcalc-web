@@ -12,7 +12,7 @@ h2 {
     font-weight: 400;
 }
 
-  input[type='text']{
+  input[type='number']{
     font-family: monospace;
     font-weight: 400;
     background-color: black;
