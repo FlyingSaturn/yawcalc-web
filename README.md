@@ -7,9 +7,13 @@ The checkboxes convert [Overworld](https://minecraft.fandom.com/wiki/Overworld) 
 ## Related Pages
 
 [Rotation](https://minecraft.wiki/w/Rotation)
+
 [My Reddit Post on r/PhoenixSC](https://www.reddit.com/r/PhoenixSC/comments/1dre12s/a_badlyedited_guide_to_minecraft_yaw_angles_using/)
+
 [Basic Information](https://minecraft.wiki/w/Chunk_format/Entity/Rotation_(yaw))
+
 [Debug Screen, Left Side](https://minecraft.fandom.com/wiki/Debug_screen#Left_side)
+
 [A Wikipedia article on Yaw](https://en.wikipedia.org/wiki/Yaw_(rotation))
 
 ## About
