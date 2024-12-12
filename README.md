@@ -1,12 +1,22 @@
-Just a normal slope calculator which calculates two Minecraft coordinates. One has to only enter the X and Z coords for this to work. 
+## Process
 
-Used Maven.
+You can enter your location and destination. Minecraft uses three digits of precision in X and Z coordinates.
 
-`index.html` should be hosted from localhost:8000 
-and spring-boot should run from port 8080
-(which is the default one for spring-boot, so you don't need to worry about that)
+The checkboxes convert [Overworld](https://minecraft.fandom.com/wiki/Overworld) coordinates to [the Nether](https://minecraft.wiki/w/The_Nether) coordinates.
 
-Use `mvn spring-boot:run` to run the app.
+## Related Pages
+
+[Rotation](https://minecraft.wiki/w/Rotation)
+[My Reddit Post on r/PhoenixSC](https://www.reddit.com/r/PhoenixSC/comments/1dre12s/a_badlyedited_guide_to_minecraft_yaw_angles_using/)
+[Basic Information on the Yaw angle in Minecraft](https://minecraft.wiki/w/Chunk_format/Entity/Rotation_(yaw))
+[Debug Screen, Left Side](https://minecraft.fandom.com/wiki/Debug_screen#Left_side)
+[A Wikipedia article on Yaw](https://en.wikipedia.org/wiki/Yaw_(rotation))
+
+## About
+
+Just a normal slope calculator which calculates two Minecraft coordinates. One has only to enter the X and Z coords for this to work. 
+
+Used Maven and Spring Boot for this.
 
 I really should thank the coding folks on the Bentovid Discord server for making my static code better. Tbh, it would've been a nightmare without their contributions.
 
