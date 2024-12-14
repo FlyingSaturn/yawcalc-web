@@ -12,7 +12,7 @@ The checkboxes convert [Overworld](https://minecraft.fandom.com/wiki/Overworld) 
 
 [Basic Information](https://minecraft.wiki/w/Chunk_format/Entity/Rotation_(yaw))
 
-[Debug Screen, Left Side. Ctrl+F to find XYZ and Yaw](https://minecraft.wiki/w/Debug_screen#Left_side)
+[Debug Screen, Left Side. Ctrl+F to find XYZ and Yaw (the most important link here tbh)](https://minecraft.wiki/w/Debug_screen#Left_side)
 
 [A Wikipedia article on Yaw](https://en.wikipedia.org/wiki/Yaw_(rotation))
 
