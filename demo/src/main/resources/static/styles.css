@@ -29,11 +29,11 @@ h2 {
     align-items: center;
     justify-content: space-around;	
   }
-  header h1{
+  .head1{
 	margin-bottom:0em;
 	text-align:center;
   }
-  header h2{
+  .head2{
   	margin-top:0em;
 	text-align:center;
   }
