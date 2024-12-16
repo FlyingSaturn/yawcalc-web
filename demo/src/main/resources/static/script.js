@@ -6,6 +6,17 @@
     // Listen for the submit event
     form.addEventListener("submit", calculateYaw);
   });
+
+  function divideByEight(a) {
+    if(a.length > 0)
+    {
+    a /= 8;
+    a = (Math.round (a * 1000.0)) / 1000.0;
+    return a + "";
+    }
+    return "";
+  }
+
   function calculateYaw(e) {
     e.preventDefault();
     const form = e.target;
@@ -23,35 +34,54 @@
     const netherEquivDest = document.querySelector('#netherEquivDest').checked;
     if(netherEquivCurrent)
     {
-      locX /= 8;
-      locX = (Math.round (locX * 1000.0)) / 1000.0; //Rounding off to 3 decimal places again
-      locZ /= 8;
-      locZ = (Math.round (locZ * 1000.0)) / 1000.0;
+      
+      locX = divideByEight(locX);
+      locZ = divideByEight(locZ);
     }
     if(netherEquivDest)
-      {
-        destX /= 8;
-        destX = (Math.round (destX * 1000.0)) / 1000.0;
-        destZ /= 8;
-        destZ = (Math.round (destZ * 1000.0)) / 1000.0;
+    {
+        destX = divideByEight(destX);
+	    destZ = divideByEight(destZ);
       }
+    if(netherEquivCurrent && !(locX.length === 0 && locZ.length === 0))
+	  {
+		 xString = locX.length === 0 ? "" : "X: " + `${locX}`;
+		 zString = locZ.length === 0 ? "" : "Z: " + `${locZ}`;
+	if (xString.length > 0 && zString.length > 0)
+        document.getElementById("netherstart").innerHTML = "Start from here in the Nether Biome: " + `${xString}` + ", "  + `${zString}`;
+	else
+	 document.getElementById("netherstart").innerHTML = "Start from here in the Nether Biome: " + `${xString}` + `${zString}`;
+	  }
+     if(netherEquivDest && !(destX.length === 0 && destZ.length === 0))
+	  {
+		 xString = destX.length === 0 ? "" : "X: " + `${destX}`;
+		 zString = destZ.length === 0 ? "" : "Z: " + `${destZ}`;
+	if (xString.length > 0 && zString.length > 0)
+        document.getElementById("netherend").innerHTML = "Start from here in the Nether Biome: " + `${xString}` + ", "  + `${zString}`;
+	else
+	 document.getElementById("netherend").innerHTML = "Start from here in the Nether Biome: " + `${xString}` + `${zString}`;
+	  }
+
     // Build the url
+    processIt = (locX.length > 0 && locZ.length > 0 && destX.length > 0 && destZ.length > 0);
+    if (processIt) {
     const url = new URL(`${window.location.href}` + "calculate");
-    url.searchParams.append("xcurrent", locX);
-    url.searchParams.append("zcurrent", locZ);
-    url.searchParams.append("xdest", destX);
-    url.searchParams.append("zdest", destZ);
+    url.searchParams.append("xcurrent", parseFloat(locX));
+    url.searchParams.append("zcurrent", parseFloat(locZ));
+    url.searchParams.append("xdest", parseFloat(destX));
+    url.searchParams.append("zdest", parseFloat(destZ));
 
     fetch(url, { method: "GET", mode: "no-cors" })
       .then((response) => response.text()) // Get the yaw as plain text
       .then((data) => {
-        document.getElementById(
-          "result"
-        ).innerHTML = `Calculated Yaw: ${data} :)`;
-        if(netherEquivCurrent)
-          document.getElementById("netherstart").innerHTML = "Start from here in the Nether Biome: " + `${locX}` + ", "  + `${locZ}`;
-        if(netherEquivDest)
-          document.getElementById("netherend").innerHTML = "Go here in the Nether Biome: " + `${destX}` + ", "  + `${destZ}`; 
-      })
+	if (processIt)
+        	document.getElementById(
+          	"result"
+        	).innerHTML = `Calculated Yaw: ${data} :)`;
+       })
       .catch((error) => console.error("Error:", error));
-  }
+
+
+    }
+
+    }
