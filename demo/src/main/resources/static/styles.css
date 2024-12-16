@@ -29,11 +29,13 @@ h2 {
     align-items: center;
     justify-content: space-around;	
   }
-  header>h1{
+  header h1{
 	margin-bottom:0em;
+	text-align:center;
   }
-  header>h2{
+  header h2{
   	margin-top:0em;
+	text-align:center;
   }
   form {
     display: flex;
