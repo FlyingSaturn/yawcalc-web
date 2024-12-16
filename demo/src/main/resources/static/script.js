@@ -1,4 +1,3 @@
- // Wait for the entire page to load
 
  document.addEventListener("DOMContentLoaded", function () {
     // Get the form element
@@ -16,7 +15,25 @@
     }
     return "";
   }
-
+  function buttonVisible(elementid) {
+  const x = document.getElementById(elementid);
+    x.style.display = "block";
+} 
+  function buttonInvisible(elementid) {
+  const x = document.getElementById(elementid);
+    x.style.display = "none";
+  }
+  function copyInnerHTML(elementid) {
+	  let text = document.getElementById(elementid).innerHTML;
+	  if (text.split(":").length - 1 == 1)
+          text = text.substring(text.indexOf(":") + 1);
+	  else if (text.split(":").length - 1 == 2)
+	  text = text.substring(text.indexOf(":") + 1, text.lastIndexOf(":"));
+	  text=text.trim();
+           navigator.clipboard.writeText(text);
+         
+          alert("Copied!");
+  }
   function calculateYaw(e) {
     e.preventDefault();
     const form = e.target;
@@ -25,6 +42,9 @@
     document.getElementById("result").innerHTML = "";
     document.getElementById("netherstart").innerHTML = "";
     document.getElementById("netherend").innerHTML = "";
+    buttonInvisible("start-copy");
+    buttonInvisible("end-copy");
+    buttonInvisible("result-copy");
     // Get the values from the form inputs
     let locX = data.get("locX");
     let locZ = data.get("locZ");
@@ -34,7 +54,6 @@
     const netherEquivDest = document.querySelector('#netherEquivDest').checked;
     if(netherEquivCurrent)
     {
-      
       locX = divideByEight(locX);
       locZ = divideByEight(locZ);
     }
@@ -43,27 +62,31 @@
         destX = divideByEight(destX);
 	    destZ = divideByEight(destZ);
       }
-    if(netherEquivCurrent && !(locX.length === 0 && locZ.length === 0))
+    const ficurrent = (netherEquivCurrent && !(locX.length === 0 && locZ.length === 0)) 
+    const fidest = (netherEquivDest && !(destX.length === 0 && destZ.length === 0))
+	  if(ficurrent)
 	  {
-		 xString = locX.length === 0 ? "" : "X: " + `${locX}`;
-		 zString = locZ.length === 0 ? "" : "Z: " + `${locZ}`;
+		 xString = locX.length === 0 ? "" : "X=" + `${locX}`;
+		 zString = locZ.length === 0 ? "" : "Z=" + `${locZ}`;
+		 buttonVisible("start-copy");
 	if (xString.length > 0 && zString.length > 0)
-        document.getElementById("netherstart").innerHTML = "Start from here in the Nether Biome: " + `${xString}` + ", "  + `${zString}`;
+        document.getElementById("netherstart").innerHTML = "Start from here in the Nether Biome: " + `${locX}` + ", "  + `${locZ}`;
 	else
 	 document.getElementById("netherstart").innerHTML = "Start from here in the Nether Biome: " + `${xString}` + `${zString}`;
 	  }
-     if(netherEquivDest && !(destX.length === 0 && destZ.length === 0))
+     if(fidest)
 	  {
-		 xString = destX.length === 0 ? "" : "X: " + `${destX}`;
-		 zString = destZ.length === 0 ? "" : "Z: " + `${destZ}`;
+		 xString = destX.length === 0 ? "" : "X=" + `${destX}`;
+		 zString = destZ.length === 0 ? "" : "Z=" + `${destZ}`;
+		  buttonVisible("end-copy");
 	if (xString.length > 0 && zString.length > 0)
-        document.getElementById("netherend").innerHTML = "Start from here in the Nether Biome: " + `${xString}` + ", "  + `${zString}`;
+        document.getElementById("netherend").innerHTML = "Start from here in the Nether Biome: " + `${destX}` + ", "  + `${destZ}`;
 	else
 	 document.getElementById("netherend").innerHTML = "Start from here in the Nether Biome: " + `${xString}` + `${zString}`;
 	  }
 
     // Build the url
-    processIt = (locX.length > 0 && locZ.length > 0 && destX.length > 0 && destZ.length > 0);
+    const processIt = (locX.length > 0 && locZ.length > 0 && destX.length > 0 && destZ.length > 0);
     if (processIt) {
     const url = new URL(`${window.location.href}` + "calculate");
     url.searchParams.append("xcurrent", parseFloat(locX));
@@ -74,14 +97,17 @@
     fetch(url, { method: "GET", mode: "no-cors" })
       .then((response) => response.text()) // Get the yaw as plain text
       .then((data) => {
-	if (processIt)
         	document.getElementById(
           	"result"
         	).innerHTML = `Calculated Yaw: ${data} :)`;
+	      buttonVisible("result-copy");
        })
       .catch((error) => console.error("Error:", error));
 
 
     }
-
-    }
+	if (!ficurrent && !fidest && !processIt)
+	  {
+	  document.getElementById("result").innerHTML = `Either enter all the values</br>or tick the respective checkbox</br>after entering a value`;
+	  }
+}

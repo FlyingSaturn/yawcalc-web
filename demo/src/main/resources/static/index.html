@@ -10,6 +10,7 @@
 <body>
   <header>
     <h1>Yaw Calculator: A Minecraft Utility</h1>
+    <h2>(w/ Nether Portal Calculator)</h2>
   </header>
     <div id="app">
         <form id="current-form">
@@ -40,13 +41,22 @@
             <label for="netherEquivDest">Destination Portal in Overworld coordinates, convert to Nether coordinates</label>
             </div>
           <div id = "but">
-          <button type="submit">Submit</button>
+	   <button type="submit">Submit</button>
           </div>
         </form>
-        <div id="netherstart"></div>
-        <div id="netherend"></div>
-        <div id="result"></div>
-        <div id="footer">
+	<span class="abc">
+	<div id="netherstart" class = "hello-result"></div>
+	<button id="start-copy" class="copy"style="display:none;" onclick="copyInnerHTML('netherstart')">Copy Start</button>
+	</span>
+	<span class="abc">
+        <div id="netherend" class="hello-result"></div>
+       	<button id="end-copy" class="copy"style="display:none;" onclick="copyInnerHTML('netherend')">Copy Destination</button>
+	</span>
+	<span class="abc">
+	<div id="result" class="hello-result"></div>
+        <button id="result-copy" class="copy"style="display:none;" onclick="copyInnerHTML('result')">Copy Yaw Angle</button>
+	</span>
+	<div id="footer">
           <a href="https://github.com/FlyingSaturn/yawcalc-web">The Github Repository</a>
           <p>Made with &lt;3</p>
         </div>
