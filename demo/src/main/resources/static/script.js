@@ -26,6 +26,7 @@ buttonVisile('start-copy');
     x.style.display = "none";
   }
   function copyInnerHTML(elementid) {
+	  console.log("Copying " + `${element-id}`);
 	  let text = document.getElementById(elementid).innerHTML;
 	  if (text.split(":").length - 1 == 1)
           text = text.substring(text.indexOf(":") + 1);
@@ -89,6 +90,7 @@ buttonVisile('start-copy');
 
     // Build the url
     const processIt = (locX.length > 0 && locZ.length > 0 && destX.length > 0 && destZ.length > 0);
+    console.log(processIt, locX, locZ, destX, destZ);
     if (processIt) {
     const url = new URL(`${window.location.href}` + "calculate");
     url.searchParams.append("xcurrent", parseFloat(locX));
