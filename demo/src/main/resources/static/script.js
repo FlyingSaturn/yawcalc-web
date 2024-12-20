@@ -1,6 +1,6 @@
-buttonVisible('repeat-copy');
-buttonVisible('end-copy');
-buttonVisible('start-copy');
+buttonInvisible('repeat-copy');
+buttonInvisible('end-copy');
+buttonInvisible('start-copy');
  document.addEventListener("DOMContentLoaded", function () {
     // Get the form element
     const form = document.getElementById("current-form");
