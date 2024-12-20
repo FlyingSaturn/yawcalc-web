@@ -18,11 +18,11 @@ buttonInvisible('start-copy');
     return "";
   }
   function buttonVisible(elementid) {
-  const x = document.getElementById(elementid);
+  const x = document.(elementid);
     x.style.display = "block";
 } 
   function buttonInvisible(elementid) {
-  const x = document.getElementById(elementid);
+  const x = document.querySelector("#", elementid);
     x.style.display = "none";
   }
   function copyInnerHTML(elementid) {
