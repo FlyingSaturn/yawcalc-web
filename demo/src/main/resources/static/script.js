@@ -22,7 +22,7 @@ buttonInvisible('start-copy');
     x.style.display = "block";
 } 
   function buttonInvisible(elementid) {
-  const x = document.getElementById("#", elementid);
+  const x = document.getElementById(elementid);
     x.style.display = "none";
   }
   function copyInnerHTML(elementid) {
