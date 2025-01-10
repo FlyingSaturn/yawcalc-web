@@ -26,7 +26,7 @@ buttonInvisible('start-copy');
     x.style.display = "none";
   }
   function copyInnerHTML(elementid) {
-	  console.log("Copying " + `${element-id}`);
+	  console.log("Copying " + `${elementid}`);
 	  let text = document.getElementById(elementid).innerHTML;
 	  if (text.split(":").length - 1 == 1)
           text = text.substring(text.indexOf(":") + 1);
