@@ -30,4 +30,5 @@ Regardless, [please check out at its GitHub repo](https://github.com/FlyingSatur
 
 ## Future Plans
 
-Refactor and correct your current static code.
+- Just give a tutorial on yaw angles and tell the people why it's essential.
+- those og meta tags... 
