@@ -83,9 +83,9 @@ buttonInvisible('start-copy');
 		 zString = destZ.length === 0 ? "" : "Z=" + `${destZ}`;
 		  buttonVisible("end-copy");
 	if (xString.length > 0 && zString.length > 0)
-        document.getElementById("netherend").innerHTML = "Start from here in the Nether Biome: " + `${destX}` + ", "  + `${destZ}`;
+        document.getElementById("netherend").innerHTML = "Your destination in the Nether Biome: " + `${destX}` + ", "  + `${destZ}`;
 	else
-	 document.getElementById("netherend").innerHTML = "Start from here in the Nether Biome: " + `${xString}` + `${zString}`;
+	 document.getElementById("netherend").innerHTML = "Your destination in the Nether Biome: " + `${xString}` + `${zString}`;
 	  }
 
     // Build the url
