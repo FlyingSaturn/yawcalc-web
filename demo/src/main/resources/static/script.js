@@ -1,4 +1,4 @@
-buttonInvisible('repeat-copy');
+buttonInvisible('result-copy');
 buttonInvisible('end-copy');
 buttonInvisible('start-copy');
  document.addEventListener("DOMContentLoaded", function () {
