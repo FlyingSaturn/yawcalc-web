@@ -30,4 +30,4 @@ Regardless, [please check out at its GitHub repo](https://github.com/FlyingSatur
 
 ## Future Plans
 
-Make something regarding the End.
+Refactor and correct your current static code.
