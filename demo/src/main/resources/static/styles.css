@@ -87,11 +87,11 @@ button {
  margin-right: 0em !important;
 }
 
-button.copy:hover {
+button:hover {
 	background-color: #555;
 	color: white;
 }
-button.copy:active {
+button:active {
 	background-color: #888;
 	color: black;
 }
