@@ -36,8 +36,6 @@ function copyInnerHTML(elementid) {
         text = text.substring(text.indexOf(":") + 1, text.lastIndexOf(":"));
     text = text.trim();
     navigator.clipboard.writeText(text);
-
-    alert("Copied!");
 }
 
 function calculateYaw(e) {
