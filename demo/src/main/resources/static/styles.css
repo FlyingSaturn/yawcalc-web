@@ -79,25 +79,25 @@ button {
    }
 .nether {
   margin:.5em;
-  margin-left: 0em !important;
+  margin-left: 0.2em !important;
   margin-right: 0em !important;
 }
 .hello-result {
  margin-left: 0em !important;
  margin-right: 0em !important;
 }
-
 button:hover {
 	background-color: #555;
-	color: white;
+	color: black;
 }
 button:active {
 	background-color: #888;
-	color: black;
+	color: white;
 }
+
 input[type="checkbox"] {
-  width: 1.45em; /*Desired width*/
-  height: 1.45em; /*Desired height*/
+  width: 2em; /*Desired width*/
+  height: 2em; /*Desired height*/
   cursor: pointer;
   margin-left: 0px;
 }
