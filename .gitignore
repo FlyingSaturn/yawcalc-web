@@ -1,0 +1,2 @@
+# Ignore the target directory in demo folder
+demo/target/ 
