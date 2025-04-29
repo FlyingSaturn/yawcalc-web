@@ -4,11 +4,11 @@ You can enter your location and destination. Minecraft uses three digits of prec
 
 The checkboxes convert [Overworld](https://minecraft.fandom.com/wiki/Overworld) coordinates to [the Nether](https://minecraft.wiki/w/The_Nether) coordinates.
 
-## Related Pages
+## Related Info
 
 [Rotation](https://minecraft.wiki/w/Rotation)
 
-[My Reddit Post on r/PhoenixSC](https://old.reddit.com/r/PhoenixSC/comments/1dre12s/a_badlyedited_guide_to_minecraft_yaw_angles_using/)
+![image](https://github.com/user-attachments/assets/5b10c90e-f3b2-4160-9817-a7dbf32f18f7)
 
 [Basic Information](https://minecraft.wiki/w/Chunk_format/Entity/Rotation_(yaw))
 
