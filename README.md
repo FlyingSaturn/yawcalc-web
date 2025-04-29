@@ -16,6 +16,12 @@ The checkboxes convert [Overworld](https://minecraft.fandom.com/wiki/Overworld) 
 
 ![image](https://github.com/user-attachments/assets/5b10c90e-f3b2-4160-9817-a7dbf32f18f7)
 
+"Digging along" probably won't be right... However, programmers have a reputation for using incorrect grammar.
+
+If you check out the wiki on the Debug Screen (you get the debug screen by pressing F3), you'll see that, along with yaw, there's also an angle called pitch. It shows precisely where you're looking between up and down.
+
+The weird thing about the coordinate system conventions followed by Minecraft is that both South (yaw) and Up (pitch) are represented using positive angles, which isn't the case in other disciplines. If you look straight towards the horizon, then your Pitch angle is "-0.0". If you are looking directly up or North, then it's negative (or the highest value, i.e., 180.0).
+
 ## About
 
 Just a normal slope calculator which calculates two Minecraft coordinates. One has only to enter the X and Z coords for this to work. 
