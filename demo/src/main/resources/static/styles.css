@@ -63,7 +63,7 @@ form #but{
     justify-items: center !important;
 }
 button {
-    background-color: white;
+    background-color: #A7A7A7;
     font-family: Lexend, sans-serif;
     color: black;
     border:none;
@@ -87,11 +87,11 @@ button {
  margin-right: 0em !important;
 }
 button:hover {
-	background-color: #555;
+	background-color: white;
 	color: black;
 }
 button:active {
-	background-color: #888;
+	background-color: #464545;
 	color: white;
 }
 
@@ -109,14 +109,14 @@ input[type="checkbox"] {
   align-items: center;
 }
 a:link {
-  color: #FFF;
-}
-a:visited {
-  color: #555;
-}
-a:hover {
   color: #BBB;
 }
+a:visited {
+  color: #9A9A9A;
+}
+a:hover {
+  color: #FFF;
+}
 a:active {
-  color: #888;
+  color: #959595;
 }
