@@ -30,11 +30,12 @@ Used Maven and Spring Boot for this.
 
 I really should thank the coding folks on the Bentovid and the Wintrcat Discord servers for making my static code better. Tbh, it would've been a nightmare without their contributions.
 
-I wanted it to be a Minecraft plugin, but it wasn't successful, since we play on Aternos and that hosting service only accepts the plugins which have gained a bit of popularity. Therefore, I lost all motivation. I had the Java method with me though, so I thought of making a Spring Boot application based on that.
+I wanted it to be a Minecraft plugin, but it wasn't successful, since we play on Aternos and that hosting service only accepts the plugins which have gained a bit of popularity. Therefore, I lost all motivation. I had the Java method with me, though, so I thought of making a Spring Boot application based on that.
 
-Regardless, [please check out at its GitHub repo](https://github.com/FlyingSaturn/yaw-calculator).
+Regardless, [please check out its GitHub repo](https://github.com/FlyingSaturn/yaw-calculator). Also, [please check out the vanilla JS version of this website](https://github.com/FlyingSaturn/yawcalc).
 
 ## Future Plans
 
-- Just give a tutorial on yaw angles and tell the people why it's essential.
-- those og meta tags... 
+- Just give a tutorial on yaw angles and tell the people why it's essential. Proper formatting (exactly like Minecraft) will work too.
+- those og meta tags
+- A swap button
