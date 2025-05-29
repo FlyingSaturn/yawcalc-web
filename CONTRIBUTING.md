@@ -38,4 +38,4 @@ docker run -p 8080:8080 yawcalc
 
 # Development
 
-I highly recommend VSCode for developing Maven applications. But you can use any other options too.
+I highly recommend VSCode for developing Maven applications, but you can use the alternatives too.
