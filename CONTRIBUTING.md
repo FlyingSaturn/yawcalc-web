@@ -25,7 +25,7 @@ That's it. Just go to localhost:8080 and enjoy the creation.
 
 (In Fedora, I just entered `mvn` before running the commands and Maven was instantly installed, without the headache of environment variables.)
 
-#Using Docker containers
+# Using Docker containers
 
 This was intended to be easy, but this one's harder in Fedora. Install docker and resolve all the issues you have (if any).
 
@@ -39,9 +39,3 @@ docker run -p 8080:8080 yawcalc
 # Development
 
 I highly recommend VSCode for developing Maven applications. But you can use any other options too.
-
-# PRs
-
-I won't be accepting any PRs related to the static code. Refer to https://github.com/FlyingSaturn/yawcalc for those PRs.
-
-For changes in the Java code, I'll be happily accepting PRs from everyone in this repository. In case you have changed the logic of generating the Yaw Angle, please make a second PR in the JS code too (if you know JS).
