@@ -19,12 +19,6 @@ public class YawCalculatorController {
                               @RequestParam("zcurrent") double zcurrent,
                               @RequestParam("xdest") double xdest, 
                               @RequestParam("zdest") double zdest) {
-        // Basic validation - check if coordinates are within reasonable Minecraft limits
-        if (Math.abs(xcurrent) > 30000000 || Math.abs(zcurrent) > 30000000 ||
-            Math.abs(xdest) > 30000000 || Math.abs(zdest) > 30000000) {
-            return "Error: Coordinates are too large. Minecraft has a world limit of ±30,000,000.";
-        }
-
         // Both zcurrent and zdest are to be negated before calculating the slope,
         // so written zcurrent - zdest instead of zdest - zcurrent
         // atan2 is for finding the angle of a line in radians, which is converted to degrees
