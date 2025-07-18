@@ -1,6 +1,7 @@
 buttonInvisible('result-copy');
 buttonInvisible('end-copy');
 buttonInvisible('start-copy');
+buttonInvisible('facing-line-copy');
 document.addEventListener("DOMContentLoaded", function() {
     // Get the form element
     const form = document.getElementById("current-form");
@@ -28,15 +29,45 @@ function buttonInvisible(elementid) {
 }
 
 function copyInnerHTML(elementid) {
-    console.log("Copying " + `${elementid}`);
+    console.log("Copying " + `${elementid}` + "...");
     let text = document.getElementById(elementid).innerHTML;
-    if (text.split(":").length - 1 == 1)
+    if (text.split(" - ").length == 2) // There's a single hyphen, with spaces
+        text = text.substring(text.indexOf("-") + 1);
+    else if (text.split(":").length - 1 == 1) // How many portions after the colon
         text = text.substring(text.indexOf(":") + 1);
     else if (text.split(":").length - 1 == 2)
         text = text.substring(text.indexOf(":") + 1, text.lastIndexOf(":"));
     text = text.trim();
     navigator.clipboard.writeText(text);
 }
+
+
+function cardinalDirection(angle) {
+    if ((angle <= -135.1 && angle > -180.0) || (angle <= 180.0 && angle >= 135.1))
+        return "north"
+    if (angle <= 135.0 && angle >= 45.1)
+        return "west"
+    if (angle <= 45.0 && angle >= -44.9)
+        return "south"
+    if (angle >= -135.0 && angle <= -45.0)
+        return "east"
+}
+
+function fermatter(yaw) {
+    let string = cardinalDirection(yaw)
+    let axis = ""
+    if (string === "north")
+        axis = "negative Z"
+    if (string === "west")
+        axis = "negative X"
+    if (string === "south")
+        axis = "positive Z"
+    if (string === "east")
+        axis = "positive X"
+    const res = `Facing: ${string} (Towards ${axis}) (${yaw}/xx.x)`
+    return res
+}
+
 
 function calculateYaw(e) {
     e.preventDefault();
@@ -105,6 +136,9 @@ function calculateYaw(e) {
                     "result"
                 ).innerHTML = `Calculated Yaw: ${data} :)`;
                 buttonVisible("result-copy");
+                const line = fermatter(data)
+                document.getElementById("facing-line").innerHTML = `The facing line - ${line}`
+                buttonVisible("facing-line-copy")
             })
             .catch((error) => console.error("Error:", error));
 
