@@ -54,7 +54,7 @@ function cardinalDirection(angle) {
 }
 
 function fermatter(yaw) {
-    let string = cardinalDirection(yaw)
+    let string = cardinalDirection(parseFloat(yaw).toFixed(1))
     let axis = ""
     if (string === "north")
         axis = "negative Z"
