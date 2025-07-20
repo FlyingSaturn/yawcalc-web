@@ -128,7 +128,7 @@ function calculateYaw(e) {
 
         fetch(url, {
                 method: "GET",
-                mode: "no-cors"
+                // mode: "no-cors"
             })
             .then((response) => response.text()) // Get the yaw as plain text
             .then((data) => {
