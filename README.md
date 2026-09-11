@@ -1,3 +1,5 @@
+# Archived repo; please visit [the vanilla JS version](https://github.com/FlyingSaturn/yawcalc).
+---
 ## Process
 
 You can enter your location and destination. Minecraft uses three digits of precision in X and Z coordinates.
